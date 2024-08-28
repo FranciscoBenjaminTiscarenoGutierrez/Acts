@@ -20,6 +20,25 @@ class materia {
     void swapprofesor(){string _hand; getline(cin, _hand); profesor = _hand;};
     void swapreporta(){string _hand; getline(cin, _hand); profesor = _hand;};
     void swapid(){string _hand; getline(cin, _hand);int num = stoi(_hand); clave=num;};
+
+    materia operator==(const materia& returned)const{
+        return *this;
+    }
+    materia operator!=(const materia& returned)const{
+        return *this;
+    }
+    materia operator>>(const materia& returned)const{
+        return *this;
+    }
+    materia operator<<(const materia& returned)const{
+        return *this;
+    }
+    materia operator+(const materia& returned)const{
+        return *this;
+    }
+    materia operatory(const materia& returned)const{
+        return *this;
+    }
 };
 
 materia::materia(int _clave,st _nombre,st _profesor,st _libro){
