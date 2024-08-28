@@ -18,9 +18,30 @@ class empleado {
     empleado(int,st,st,ff,st);
     string getid(){st id = to_string(clave); return id;}
     void imprime(st id){cout << "Nombre: " << nombre << endl << "Domicilio: " << domicilio << endl << "Sueldo: " << sueldo << " Mensuales" << endl << "Este empleado reporta a " << reportaA << endl;};
-    void swapdomicilio(){string _hand; getline(cin, _hand); domicilio = _hand;};
-    void swapsueldo(){string _hand; getline(cin, _hand);  ff num = stof(_hand); sueldo = num;}; 
-    void swapreporta(){string _hand; getline(cin, _hand); domicilio = _hand;};
+    void CambiaDomic(){string _hand; getline(cin, _hand); domicilio = _hand;};
+    void ActualSueldo(){string _hand; getline(cin, _hand);  ff num = stof(_hand); sueldo = num;}; 
+    void CambiaReportaA(){string _hand; getline(cin, _hand); domicilio = _hand;};
+
+    empleado operator==(const empleado& returned)const{
+        return *this;
+    }
+    empleado operator!=(const empleado& returned)const{
+        return *this;
+    }
+    empleado operator>>(const empleado& returned)const{
+        return *this;
+    }
+    empleado operator<<(const empleado& returned)const{
+        return *this;
+    }
+    empleado operator+(const empleado& returned)const{
+        return *this;
+    }
+    empleado operatory(const empleado& returned)const{
+        return *this;
+    }
+
+
 };
 
 empleado::empleado(int _clave,st _nombre,st _domicilio,ff _sueldo,st _reportaA){
@@ -100,8 +121,8 @@ void selector() {
         switch (empverify(atribute))
         {
         case 0: break;
-        case 1: jefeplanta.swapdomicilio();  break;
-        case 2: jefepersonal.swapdomicilio();  break;
+        case 1: jefeplanta.CambiaDomic();  break;
+        case 2: jefepersonal.CambiaDomic();  break;
         
         default:  break;
         }
@@ -111,8 +132,8 @@ void selector() {
         switch (empverify(atribute))
         {
         case 0: break;
-        case 1: jefeplanta.swapdomicilio();  break;
-        case 2: jefepersonal.swapdomicilio();  break;
+        case 1: jefeplanta.CambiaDomic();  break;
+        case 2: jefepersonal.CambiaDomic();  break;
         
         default:  break;
         }
@@ -123,8 +144,8 @@ void selector() {
         switch (empverify(atribute))
         {
         case 0: break;
-        case 1: jefeplanta.swapreporta();  break;
-        case 2: jefepersonal.swapreporta();  break;
+        case 1: jefeplanta.CambiaReportaA();  break;
+        case 2: jefepersonal.CambiaReportaA();  break;
         
         default:  break;
         }
