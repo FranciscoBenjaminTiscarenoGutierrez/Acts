@@ -34,6 +34,11 @@ public:
              << ", Materias: " << alumno.materias << ", Promedio: " << alumno.promedio;
         return show;
     }
+
+    std::string getname() {
+        return nombre;
+    }
+
 };
 
 
@@ -54,6 +59,7 @@ private:
 public:
     Cola():ult(-1){}
 
+
     bool vacia()const{return ult < 0;}
     bool llena()const{return ult >= TAM - 1;}
 
@@ -66,7 +72,8 @@ public:
             return;
         }
 
-        //std::cout<<"exception 2"<<std::endl; /////////////////////////
+        std::cout<<"valor ult" << ult <<std::endl; /////////////////////////
+
         std::cin.ignore(); 
         ult++;
         std::cin >>datos[ult]; 
@@ -76,6 +83,7 @@ public:
     Alumno& dequeue(){
 
         std::cout << datos[0] << std::endl;
+        std::cout<<"valor ult" << ult <<std::endl; /////////////////////////
     for (int i = 0; i < ult; i++) {
         
         datos[i] = datos[i + 1];
@@ -111,9 +119,28 @@ public:
         return nuevaCola;       
     }
 
+    int find(std::string hand){
+        int i=ult;
+        for(;i!=-1;i--){
+
+            std::string temp = datos[i].getname();
+
+            if(temp == hand){
+
+                //std::cout<<"Encontrado "<<std::endl; /////////////////////////
+
+                std::cout<<"Elementos delante de este "<< i<<std::endl; /////////////////////////
+                return i;
+            }
+
+        }
+        
+    }
+    
+
+
 };
 //*************************************************************************************
 
 #endif // COLA_H
-
 

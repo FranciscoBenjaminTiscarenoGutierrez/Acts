@@ -22,6 +22,7 @@ class func{
         const string cmdexit ="/salir";
         const string insert ="/solicitud";
         const string process ="/constancia";
+        const string find ="/encontrar";
 
     public:
     
@@ -61,6 +62,10 @@ void selector() {
         maincola = maincola - i;
     }
 
+    else if(commandd == find){
+        maincola.find(atribute);
+    }
+
 
     else if(commandd == cmdexit){throw runtime_error("Saliendo del programa");}
 
@@ -90,7 +95,7 @@ cout << "|   /solicitud-<num>                           |" << endl;
 cout << "|   * Inserta solicitud de un alumno a la cola |" << endl;
 cout << "|                                              |" << endl;
 cout << "|   /constancia-<num>                          |" << endl;
-cout << "|   * Elabora una constancia                   |" << endl;
+cout << "|   * Elabora una constancia    1111111        |" << endl;
 cout << "|                                              |" << endl;
 cout << "|   /salir                                     |" << endl;
 cout << "|   Sale del programa.                         |" << endl;
@@ -108,4 +113,3 @@ cout << "+----------------------------------------------+" << endl;
     
 
 }
-
