@@ -6,7 +6,7 @@ using namespace std;
 
 #define st string
 #define ff float
-
+//texto
 class materia {
     private:
     int clave;

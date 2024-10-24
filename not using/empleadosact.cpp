@@ -16,11 +16,12 @@ class empleado {
     st reportaA;
     public:
     empleado(int,st,st,ff,st);
+    empleado() : clave(0), nombre(""), domicilio(""), sueldo(0.0f), reportaA("") {}
     string getid(){st id = to_string(clave); return id;}
     void imprime(st id){cout << "Nombre: " << nombre << endl << "Domicilio: " << domicilio << endl << "Sueldo: " << sueldo << " Mensuales" << endl << "Este empleado reporta a " << reportaA << endl;};
     void CambiaDomic(){string _hand; getline(cin, _hand); domicilio = _hand;};
     void ActualSueldo(){string _hand; getline(cin, _hand);  ff num = stof(_hand); sueldo = num;}; 
-    void CambiaReportaA(){string _hand; getline(cin, _hand); domicilio = _hand;};
+    void CambiaReportaA(){string _hand; getline(cin, _hand); reportaA = _hand;};
 
     empleado operator==(const empleado& returned)const{
         return *this;
@@ -48,6 +49,26 @@ empleado::empleado(int _clave,st _nombre,st _domicilio,ff _sueldo,st _reportaA){
  clave = _clave;nombre = _nombre;domicilio = _domicilio;sueldo = _sueldo;reportaA = _reportaA;
 };
 
+
+
+class PilaEstatica{
+
+
+
+private: 
+int Tam;
+empleado Datos [3];
+public:
+PilaEstatica(): Datos{empleado( 0, "default_nombre", "default_domicilio", 0.0f, "default_reportaA"),
+empleado( 0, "default_nombre", "default_domicilio", 0.0f, "default_reportaA"),
+empleado( 0, "default_nombre", "default_domicilio", 0.0f, "default_reportaA")}{Tam=-1;};
+int push(); 
+int top(); 
+int pop(); 
+
+int muestra();
+
+};
 empleado jefeplanta = empleado(123,"Alejando","Calle flores 123",45000.1,"Maria");
 empleado jefepersonal = empleado(456,"Marcos","Calle lagos 123",30000.3,"Ernesto");;
 

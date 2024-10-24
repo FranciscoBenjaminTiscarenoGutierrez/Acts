@@ -23,6 +23,7 @@ class func{
         const string insert ="/solicitud";
         const string process ="/constancia";
         const string find ="/encontrar";
+        const string sort ="/ordenar";
 
     public:
     
@@ -64,6 +65,9 @@ void selector() {
 
     else if(commandd == find){
         maincola.find(atribute);
+    }
+    else if(commandd == sort){
+        maincola.ordenarPorPromedio();
     }
 
 
