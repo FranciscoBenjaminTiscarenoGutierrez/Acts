@@ -3,6 +3,8 @@
 #include "Alumno.h"
 #include "menuescolar.h"
 #include <limits>
+
+
 int main()
 {
     slashmenu mainmenu;

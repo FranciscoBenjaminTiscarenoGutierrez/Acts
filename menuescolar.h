@@ -43,16 +43,19 @@ class slashmenu{
     selector();
     }
 
-
 void selector() {
-    if (commandd == insert) {
+
+         if (commandd == insert) {
+            
         Alumno nuevoAlumno; 
         std::cin >> nuevoAlumno;
         auto nodoUltimo = lista.ultimo();
         lista.insertarCola(nodoUltimo, nuevoAlumno);
         many++;
     }
+
     else if (commandd == process) {
+
         int intribute = std::stoi(atribute);
         for(int i=0;i<intribute;i++){if (!lista.vacia()) {
             lista.imprimirNodo(lista.primero());
@@ -62,18 +65,9 @@ void selector() {
         }}
         
     }
-    /*else if (commandd == find) {
-        try {
-            int intribute = std::stoi(atribute);
-            node<Alumno>* finded = lista.buscarPorNumeroSocio(intribute);
-            lista.imprimirNodo(finded);
-        } catch (const std::invalid_argument&) {
-            node<Alumno>* finded = lista.buscarPorDomicilio(atribute);
-            lista.imprimirNodo(finded);
-        }
-    }*/
 
     else if (commandd == cmdexit) {
+
         throw std::runtime_error("Saliendo del programa");
     }
     else {
@@ -87,7 +81,7 @@ cout << "+----------------------------------------------+" << endl;
 cout << "|     Generador de Constancias                 |" << endl;
 cout << "+----------------------------------------------+" << endl;
 cout << "|   /solicitud                                 |" << endl;
-cout << "|   * Inserta solicitud de un alumno a la cola |" << endl;
+cout << "|   * Activa modo de insercion en la cola      |" << endl;
 cout << "|                                              |" << endl;
 cout << "|   /constancia-<num>                          |" << endl;
 cout << "|   * Elabora una constancia                   |" << endl;
