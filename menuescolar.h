@@ -86,7 +86,7 @@ void selector() {
 cout << "+----------------------------------------------+" << endl;
 cout << "|     Generador de Constancias                 |" << endl;
 cout << "+----------------------------------------------+" << endl;
-cout << "|   /solicitud-<num>                           |" << endl;
+cout << "|   /solicitud                                 |" << endl;
 cout << "|   * Inserta solicitud de un alumno a la cola |" << endl;
 cout << "|                                              |" << endl;
 cout << "|   /constancia-<num>                          |" << endl;
@@ -98,11 +98,6 @@ cout << "+----------------------------------------------+" << endl;
      }
 
 };
-
-
-
-
-
 
 #endif // MENUESCOLAR_H
 
