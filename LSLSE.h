@@ -1,3 +1,5 @@
+#ifndef LSLSE_H
+#define LSLSE_H
 template<class T>
 class LSLSE;
 #include <string>
@@ -25,11 +27,9 @@ public:
     void insertar(node<T>* pos, T elem);
     bool eliminar(node<T>* pos);
     void imprimir()const;
-
-    node<T>* buscarPorNumeroSocio(int numeroSocio) const; 
-    node<T>* buscarPorDomicilio(const std::string& domicilio) const; 
+    
     void imprimirNodo(node<T>* nodo) const;
-    void ordenar();
+    void insertarCola(node<T>* nodoUltimo, T elem);
 
 };
 
@@ -69,6 +69,25 @@ void LSLSE<T>::insertar(node<T>* pos, T elem){
         aux->sig=pos->sig;
         pos->sig=aux;
     }
+}
+
+template<class T>
+void LSLSE<T>::insertarCola(node<T>* nodoUltimo, T elem) {
+    node<T>* aux = new node<T>;  
+    aux->data = elem;            
+    aux->sig = nullptr;
+    if (nodoUltimo == nullptr) { 
+        if (lista == nullptr) { 
+            lista = aux;
+        } else {
+            node<T>* temp = lista;
+            while (temp->sig != nullptr) {
+                temp = temp->sig;}
+            temp->sig = aux; 
+        }
+    } else {
+        aux->sig = nodoUltimo->sig; 
+        nodoUltimo->sig = aux;}
 }
 
 template<class T>
@@ -114,30 +133,30 @@ bool LSLSE<T>::vacia()const{
 //
 
 
-template<class T>
-node<T>* LSLSE<T>::buscarPorDomicilio(const std::string& domicilio) const {
+/*template<class T>
+node<T>* LSLSE<T>::buscarPorA(const std::string& text) const {
     node<T>* aux = lista; 
     while (aux != nullptr) {
-        if (aux->data.getDomicilio() == domicilio) { 
+        if (aux->data.gettext() == domicilio) { 
             return aux; 
         }
         aux = aux->sig; 
     }
     return nullptr; 
-}
+}*/
 
-template<class T>
-node<T>* LSLSE<T>::buscarPorNumeroSocio(int numeroSocio) const {
+/*template<class T>
+node<T>* LSLSE<T>::buscarPorB(int num) const {
     node<T>* aux = lista;
     while (aux != nullptr) {
         // Comparando con el número de socio
-        if (aux->data.getNumeroSocio() == numeroSocio) {
+        if (aux->data.getnum() == numeroSocio) {
             return aux; 
         }
         aux = aux->sig; 
     }
     return nullptr;
-}
+}*/
 
 template<class T>
 void LSLSE<T>::imprimirNodo(node<T>* nodo) const {
@@ -146,25 +165,5 @@ void LSLSE<T>::imprimirNodo(node<T>* nodo) const {
     } 
 }
 
-template<class T>
-void LSLSE<T>::ordenar() {
-    if (vacia() || lista->sig == nullptr) {
-        return; 
-    }
-    bool swapp;
-    do {
-        swapp = false;
-        node<T>* aux = lista;
-
-        while (aux != nullptr && aux->sig != nullptr) {
-            if (aux->data > aux->sig->data) { 
-                T temp = aux->data;
-                aux->data = aux->sig->data;
-                aux->sig->data = temp;
-                swapp = true;
-            }
-            aux = aux->sig;
-        }
-    } while(swapp); 
-}
+#endif // LSLSE_H
 
